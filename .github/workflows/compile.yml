@@ -1,0 +1,45 @@
+name: "QMK firmware"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  qmk-compile:
+    name: Compile firmware
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install QMK
+        run: |
+          pip install --upgrade pip
+          pip install --user qmk
+          qmk setup --yes
+
+      - name: Compile stock firmware
+        run: qmk compile -kb massdrop/ctrl -km default
+
+      - name: Compile stock mac
+        run: qmk compile -kb massdrop/ctrl -km mac
+
+      - name: Checkout custom keymap
+        uses: actions/checkout@v3
+
+      - name: Compile custom firmware
+        run: |
+          pwd
+          ln -s ~/work/qmk-massdrop-ctrl/qmk-massdrop-ctrl/ ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils
+          ls -lah ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/
+          qmk compile -kb massdrop/ctrl -km nils
+
+      - name: Copy firmware images
+        run: |
+          mkdir build/
+          cp ~/qmk_firmware/massdrop_ctrl_* ./build/
+
+      # https://github.com/marketplace/actions/upload-a-build-artifact
+      - name: Upload firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: 'build/*'
+          retention-days: 3
