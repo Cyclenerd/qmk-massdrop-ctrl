@@ -22,7 +22,7 @@ jobs:
         run: qmk compile -kb massdrop/ctrl -km mac
 
       - name: Checkout custom keymap
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compile custom firmware
         run: |
