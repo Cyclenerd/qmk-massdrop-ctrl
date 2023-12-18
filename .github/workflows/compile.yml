@@ -38,7 +38,7 @@ jobs:
 
       # https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: 'build/*'
