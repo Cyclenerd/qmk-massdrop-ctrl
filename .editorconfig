@@ -10,13 +10,18 @@ insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{py,ts,js,tf,yml,ts,tsx,mjs,md,js,jsx,svg,json}]
+[*.{c,py,ts,js,tf,yml,ts,tsx,mjs,md,js,jsx,svg,pl,sh,json}]
 charset = utf-8
 
 # 2 space indentation
-[*.{c,py,ts,js,tf,yml,ts,tsx,mjs,md,js,jsx,svg}]
+[*.{py,ts,js,tf,yml,ts,tsx,mjs,md,js,jsx,svg}]
 indent_style = space
 indent_size = 2
+
+# 4 space indentation
+[*.{c}]
+indent_style = space
+indent_size = 4
 
 # 4 tab indentation
 [*.{pl,sh,json}]
