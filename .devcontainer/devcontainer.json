@@ -1,0 +1,25 @@
+{
+	"name": "QMK Development Environment",
+	// https://github.com/devcontainers/images/tree/main/src/cpp
+	"image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
+	"customizations": {
+	"vscode": {
+		"extensions": [
+			"ms-vscode.cpptools",
+			"ms-vscode.cmake-tools"
+		]
+	}
+	},
+	"onCreateCommand": "sudo apt update && sudo apt install -y git python3-pip && python3 -m pip install --break-system-packages --user -r /workspace/requirements.txt && qmk setup --yes",
+	"postCreateCommand": "ln -s /workspace /home/vscode/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils",
+	// Podman specific settings
+	"remoteUser": "vscode",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
+	"runArgs": [
+		"--userns=keep-id"  // Causes issue with uid mappings on host, which we need for git to work properly - files are owned by random uids due to the uid mapping
+	],
+	"containerEnv": {
+		"HOME": "/home/vscode"
+	}
+}

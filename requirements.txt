@@ -1,0 +1,15 @@
+# QMK Python requirements
+# cat /home/vscode/qmk_firmware/requirements.txt
+appdirs
+argcomplete
+colorama
+dotty-dict
+hid
+hjson
+jsonschema
+milc
+pygments
+pyserial
+pyusb
+pillow
+qmk
