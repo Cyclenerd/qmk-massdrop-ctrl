@@ -3,12 +3,12 @@
 	// https://github.com/devcontainers/images/tree/main/src/cpp
 	"image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
 	"customizations": {
-	"vscode": {
-		"extensions": [
-			"ms-vscode.cpptools",
-			"ms-vscode.cmake-tools"
-		]
-	}
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools"
+			]
+		}
 	},
 	"onCreateCommand": "sudo apt update && sudo apt install -y git python3-pip && python3 -m pip install --break-system-packages --user -r /workspace/requirements.txt && qmk setup --yes",
 	"postCreateCommand": "ln -s /workspace /home/vscode/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils",
