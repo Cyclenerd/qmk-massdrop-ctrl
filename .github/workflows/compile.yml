@@ -19,7 +19,7 @@ jobs:
         run: qmk compile -kb massdrop/ctrl -km default
 
       - name: Checkout custom keymap
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Compile custom firmware
         run: |
