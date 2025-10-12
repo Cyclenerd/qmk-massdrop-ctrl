@@ -1,5 +1,7 @@
 # Massdrop CTRL Keymap
 
+[![Badge: QMK Firmware](https://img.shields.io/badge/QMK%20Firmware-333333.svg?logo=qmk&logoColor=white)](#readme)
+
 In this repo you can find my customized QMK firmware for the Massdrop CRTL keyboard.
 
 [![Screenshot: Keymap](./img/keymap.png)](./keymap.c)
@@ -21,9 +23,6 @@ This custom keymap is based on the [stock Mac keymap](https://github.com/qmk/qmk
 The firmware is compiled automatically via [GitHub Actions](https://github.com/Cyclenerd/qmk-massdrop-ctrl/actions/workflows/compile.yml) and stored as artifact for three days.
 
 ## Compile
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Cyclenerd/qmk-massdrop-ctrl)
-
 
 With QMK CLI:
 ```shell
