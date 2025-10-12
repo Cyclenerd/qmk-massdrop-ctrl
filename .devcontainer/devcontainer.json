@@ -10,7 +10,7 @@
 			]
 		}
 	},
-	"onCreateCommand": "sudo apt update && sudo apt install -y git python3-pip && python3 -m pip install --break-system-packages --user -r /workspace/requirements.txt && qmk setup --yes",
+	"onCreateCommand": "sudo apt update && sudo apt install -y git python3-pip && python3 -m pip install --break-system-packages --user -r /workspace/requirements.txt && qmk setup --yes && cd /home/vscode/qmk_firmware && git checkout 0.26.11 && make git-submodule",
 	"postCreateCommand": "ln -s /workspace /home/vscode/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils",
 	// Podman specific settings
 	"remoteUser": "vscode",

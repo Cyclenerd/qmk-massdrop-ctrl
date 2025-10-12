@@ -4,6 +4,11 @@
 
 In this repo you can find my customized QMK firmware for the Massdrop CRTL keyboard.
 
+> [!IMPORTANT]  
+> In November 2024 `arm_atsam` was removed from QMK.
+> This affects users with `massdrop/ctrl` or `massdrop/alt` keyboards.
+> Users who need to build for these targets should stay on the `0.26.x` version of QMK until these boards have been restored.
+
 [![Screenshot: Keymap](./img/keymap.png)](./keymap.c)
 
 The Massdrop CTRL is a TKL mechanical keyboard featuring dual USB-C connectors,
@@ -25,7 +30,8 @@ The firmware is compiled automatically via [GitHub Actions](https://github.com/C
 ## Compile
 
 With QMK CLI:
-```shell
+
+```bash
 # Setting Up Your QMK Environment
 sudo apt install -y git python3-pip
 # Install the QMK CLI
@@ -37,8 +43,9 @@ qmk compile -kb massdrop/ctrl -km default
 ```
 
 Without QMK CLI:
-```shell
-git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
+
+```bash
+git clone --branch "0.26.11" --single-branch --recurse-submodules https://github.com/qmk/qmk_firmware.git
 cd qmk_firmware
 util/qmk_install.sh
 make massdrop/ctrl:default
@@ -50,7 +57,7 @@ make massdrop/ctrl:default
 
 ```shell
 # Clone this repo
-git clone https://github.com/Cyclenerd/qmk-massdrop-ctrl.git
+git clone "https://github.com/Cyclenerd/qmk-massdrop-ctrl.git"
 # Link custom keymap to QMK firmware
 ln -s /mnt/c/Users/Nils/Projects/qmk-massdrop-ctrl/ qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils
 # Compile custom keymap

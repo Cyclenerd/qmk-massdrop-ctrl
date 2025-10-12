@@ -14,6 +14,9 @@ jobs:
           pip install --upgrade pip
           pip install --user qmk
           qmk setup --yes
+          cd ~/qmk_firmware
+          git checkout 0.26.11
+          make git-submodule
 
       - name: Compile stock firmware
         run: qmk compile -kb massdrop/ctrl -km default
