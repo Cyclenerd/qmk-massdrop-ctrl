@@ -26,7 +26,7 @@ jobs:
       - name: Compile custom firmware
         run: |
           pwd
-          ln -s ~/work/qmk-massdrop-ctrl/qmk-massdrop-ctrl/ ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils
+          ln -s "$GITHUB_WORKSPACE" ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils
           ls -lah ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/
           qmk compile -kb massdrop/ctrl -km nils
 
