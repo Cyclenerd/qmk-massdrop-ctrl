@@ -7,13 +7,12 @@ jobs:
   qmk-compile:
     name: Compile firmware
     runs-on: ubuntu-latest
+    container: ghcr.io/qmk/qmk_cli
     steps:
 
       - name: Install QMK
         run: |
-          pip install --upgrade pip
-          pip install --user qmk
-          qmk setup --yes
+          qmk setup --yes --home ~/qmk_firmware
           cd ~/qmk_firmware
           git checkout 0.26.11
           make git-submodule
