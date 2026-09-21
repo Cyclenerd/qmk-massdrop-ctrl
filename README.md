@@ -19,7 +19,7 @@ and fully customizable RGB backlighting and underlighting.
 * Hardware Supported: Massdrop, Inc. CTRL PCBs utilizing Microchip&#39;s ATSAMD51J18A MCU and USB2422 2-Port USB 2.0 Hi-Speed Hub Controller, and ISSI&#39;s IS31FL3733 LED Drivers.  
 * Hardware Availability: [Massdrop CTRL Mechanical Keyboard](https://www.massdrop.com/buy/massdrop-ctrl-mechanical-keyboard)
 
-This custom keymap is based on the [stock Mac keymap](https://github.com/qmk/qmk_firmware/tree/master/keyboards/massdrop/ctrl/keymaps/mac).
+This custom keymap is based on the [stock keymap](https://github.com/qmk/qmk_firmware/tree/0.26.11/keyboards/massdrop/ctrl/keymaps).
 
 ## Download
 
